@@ -185,4 +185,110 @@ function safeParseJson(val, fallback) {
   catch { return fallback; }
 }
 
+// GET /api/images/search — Combined attribute filters + full-text search
+router.get('/search', (req, res) => {
+  try {
+    const db = getDb();
+    const page = Math.max(1, parseInt(req.query.page) || 1);
+    const limit = Math.min(100, Math.max(1, parseInt(req.query.limit) || 20));
+    const offset = (page - 1) * limit;
+
+    const conditions = [];
+    const params = [];
+
+    // Attribute filters (multi-select via comma-separated)
+    const filterableColumns = [
+      'garment_type', 'style', 'material', 'pattern', 'season',
+      'occasion', 'consumer_profile', 'location_continent',
+      'location_country', 'location_city',
+    ];
+
+    for (const col of filterableColumns) {
+      if (req.query[col]) {
+        const values = req.query[col].split(',').map(v => v.trim()).filter(Boolean);
+        if (values.length > 0) {
+          const placeholders = values.map(() => '?').join(',');
+          conditions.push(`m.${col} IN (${placeholders})`);
+          params.push(...values);
+        }
+      }
+    }
+
+    // Designer filter (from annotations)
+    if (req.query.designer) {
+      const designers = req.query.designer.split(',').map(v => v.trim()).filter(Boolean);
+      if (designers.length > 0) {
+        const placeholders = designers.map(() => '?').join(',');
+        conditions.push(`i.id IN (SELECT image_id FROM annotations WHERE designer IN (${placeholders}))`);
+        params.push(...designers);
+      }
+    }
+
+    // Time filters
+    if (req.query.year) {
+      conditions.push("strftime('%Y', i.upload_date) = ?");
+      params.push(req.query.year);
+    }
+    if (req.query.month) {
+      conditions.push("strftime('%m', i.upload_date) = ?");
+      params.push(req.query.month);
+    }
+
+    // Full-text search
+    let ftsJoin = '';
+    if (req.query.q) {
+      ftsJoin = 'INNER JOIN search_index si ON si.image_id = CAST(i.id AS TEXT)';
+      conditions.push('search_index MATCH ?');
+      // Escape special FTS5 characters and wrap in quotes for safety
+      const query = req.query.q.replace(/['"]/g, '');
+      params.push(query);
+    }
+
+    const whereClause = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
+
+    // Count total
+    const countSql = `
+      SELECT COUNT(DISTINCT i.id) as count
+      FROM images i
+      LEFT JOIN ai_metadata m ON i.id = m.image_id
+      ${ftsJoin}
+      ${whereClause}
+    `;
+    const total = db.prepare(countSql).get(...params).count;
+
+    // Fetch results
+    const dataSql = `
+      SELECT DISTINCT i.*, m.description, m.garment_type, m.style, m.material,
+             m.color_palette, m.pattern, m.season, m.occasion,
+             m.consumer_profile, m.trend_notes, m.location_continent,
+             m.location_country, m.location_city
+      FROM images i
+      LEFT JOIN ai_metadata m ON i.id = m.image_id
+      ${ftsJoin}
+      ${whereClause}
+      ORDER BY i.upload_date DESC
+      LIMIT ? OFFSET ?
+    `;
+    const images = db.prepare(dataSql).all(...params, limit, offset);
+
+    const annotStmt = db.prepare('SELECT * FROM annotations WHERE image_id = ? ORDER BY created_at DESC');
+    const results = images.map(img => ({
+      ...img,
+      color_palette: safeParseJson(img.color_palette, []),
+      annotations: annotStmt.all(img.id).map(a => ({
+        ...a,
+        tags: safeParseJson(a.tags, []),
+      })),
+    }));
+
+    res.json({
+      images: results,
+      pagination: { page, limit, total, totalPages: Math.ceil(total / limit) },
+    });
+  } catch (err) {
+    console.error('Search error:', err);
+    res.status(500).json({ error: 'Failed to search images' });
+  }
+});
+
 export default router;
