@@ -1,0 +1,23 @@
+{
+  "name": "fashion-garment-classifier",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered fashion garment classification and inspiration web app",
+  "workspaces": [
+    "app/client",
+    "app/server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev --workspace=app/server",
+    "dev:client": "npm run dev --workspace=app/client",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:e2e": "vitest run tests/e2e"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "vitest": "^3.1.0"
+  }
+}
