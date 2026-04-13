@@ -145,47 +145,8 @@ router.get('/', (req, res) => {
   }
 });
 
-// GET /api/images/:id — Single image with full metadata and annotations
-router.get('/:id', (req, res) => {
-  try {
-    const db = getDb();
-    const id = parseInt(req.params.id);
-    if (isNaN(id)) return res.status(400).json({ error: 'Invalid image ID' });
-
-    const image = db.prepare(`
-      SELECT i.*, m.description, m.garment_type, m.style, m.material,
-             m.color_palette, m.pattern, m.season, m.occasion,
-             m.consumer_profile, m.trend_notes, m.location_continent,
-             m.location_country, m.location_city
-      FROM images i
-      LEFT JOIN ai_metadata m ON i.id = m.image_id
-      WHERE i.id = ?
-    `).get(id);
-
-    if (!image) return res.status(404).json({ error: 'Image not found' });
-
-    const annotations = db.prepare(
-      'SELECT * FROM annotations WHERE image_id = ? ORDER BY created_at DESC'
-    ).all(id).map(a => ({ ...a, tags: safeParseJson(a.tags, []) }));
-
-    res.json({
-      ...image,
-      color_palette: safeParseJson(image.color_palette, []),
-      annotations,
-    });
-  } catch (err) {
-    console.error('Get image error:', err);
-    res.status(500).json({ error: 'Failed to get image' });
-  }
-});
-
-function safeParseJson(val, fallback) {
-  if (!val) return fallback;
-  try { return JSON.parse(val); }
-  catch { return fallback; }
-}
-
 // GET /api/images/search — Combined attribute filters + full-text search
+// NOTE: Must be defined before /:id to avoid matching "search" as an id
 router.get('/search', (req, res) => {
   try {
     const db = getDb();
@@ -290,5 +251,45 @@ router.get('/search', (req, res) => {
     res.status(500).json({ error: 'Failed to search images' });
   }
 });
+
+// GET /api/images/:id — Single image with full metadata and annotations
+router.get('/:id', (req, res) => {
+  try {
+    const db = getDb();
+    const id = parseInt(req.params.id);
+    if (isNaN(id)) return res.status(400).json({ error: 'Invalid image ID' });
+
+    const image = db.prepare(`
+      SELECT i.*, m.description, m.garment_type, m.style, m.material,
+             m.color_palette, m.pattern, m.season, m.occasion,
+             m.consumer_profile, m.trend_notes, m.location_continent,
+             m.location_country, m.location_city
+      FROM images i
+      LEFT JOIN ai_metadata m ON i.id = m.image_id
+      WHERE i.id = ?
+    `).get(id);
+
+    if (!image) return res.status(404).json({ error: 'Image not found' });
+
+    const annotations = db.prepare(
+      'SELECT * FROM annotations WHERE image_id = ? ORDER BY created_at DESC'
+    ).all(id).map(a => ({ ...a, tags: safeParseJson(a.tags, []) }));
+
+    res.json({
+      ...image,
+      color_palette: safeParseJson(image.color_palette, []),
+      annotations,
+    });
+  } catch (err) {
+    console.error('Get image error:', err);
+    res.status(500).json({ error: 'Failed to get image' });
+  }
+});
+
+function safeParseJson(val, fallback) {
+  if (!val) return fallback;
+  try { return JSON.parse(val); }
+  catch { return fallback; }
+}
 
 export default router;
