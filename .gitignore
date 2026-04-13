@@ -7,4 +7,5 @@ app/server/uploads/*
 app/server/data/*
 !app/server/data/.gitkeep
 eval/images/
+eval/eval_results.json
 .DS_Store
