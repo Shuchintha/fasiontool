@@ -89,8 +89,8 @@ function initSchema() {
 export function rebuildSearchIndex(imageId) {
   const d = getDb();
 
-  // Delete existing entries for this image
-  d.prepare('DELETE FROM search_index WHERE image_id = ?').run(String(imageId));
+  // Delete existing entries for this image (use rowid for contentless FTS5)
+  d.prepare('DELETE FROM search_index WHERE rowid = ?').run(imageId);
 
   // Gather all text for this image
   const meta = d.prepare('SELECT description FROM ai_metadata WHERE image_id = ?').get(imageId);
@@ -103,8 +103,8 @@ export function rebuildSearchIndex(imageId) {
     catch { return ''; }
   }).join(' ');
 
-  d.prepare('INSERT INTO search_index (image_id, description, notes, tags) VALUES (?, ?, ?, ?)')
-    .run(String(imageId), description, allNotes, allTags);
+  d.prepare('INSERT INTO search_index (rowid, image_id, description, notes, tags) VALUES (?, ?, ?, ?, ?)')
+    .run(imageId, String(imageId), description, allNotes, allTags);
 }
 
 export function closeDb() {

@@ -237,7 +237,7 @@ router.get('/search', (req, res) => {
     // Full-text search
     let ftsJoin = '';
     if (req.query.q) {
-      ftsJoin = 'INNER JOIN search_index si ON si.image_id = CAST(i.id AS TEXT)';
+      ftsJoin = 'INNER JOIN search_index ON search_index.rowid = i.id';
       conditions.push('search_index MATCH ?');
       // Escape special FTS5 characters and wrap in quotes for safety
       const query = req.query.q.replace(/['"]/g, '');
