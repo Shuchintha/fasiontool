@@ -10,6 +10,7 @@ export default function BrowsePage() {
   const [activeFilters, setActiveFilters] = useState({});
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const fetchFilters = useCallback(async () => {
     try {
@@ -22,6 +23,7 @@ export default function BrowsePage() {
 
   const fetchImages = useCallback(async (page = 1) => {
     setLoading(true);
+    setError(null);
     try {
       const hasFilters = searchQuery || Object.values(activeFilters).some(v =>
         Array.isArray(v) ? v.length > 0 : Boolean(v)
@@ -40,6 +42,7 @@ export default function BrowsePage() {
       setPagination(data.pagination);
     } catch (err) {
       console.error('Failed to load images:', err);
+      setError('Failed to load images. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -85,7 +88,17 @@ export default function BrowsePage() {
           </h1>
         </div>
 
-        {loading ? (
+        {error ? (
+          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+            <p className="text-red-700">{error}</p>
+            <button
+              onClick={() => fetchImages(1)}
+              className="mt-3 text-sm text-indigo-600 hover:underline"
+            >
+              Retry
+            </button>
+          </div>
+        ) : loading ? (
           <div className="flex items-center justify-center h-64">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600" />
           </div>
@@ -94,7 +107,19 @@ export default function BrowsePage() {
             <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
               <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <p className="mt-4 text-gray-500">No images found. Upload some garment photos to get started!</p>
+            {searchQuery || Object.values(activeFilters).some(v => Array.isArray(v) ? v.length > 0 : Boolean(v)) ? (
+              <>
+                <p className="mt-4 text-gray-500">No images match your filters.</p>
+                <button
+                  onClick={handleClearFilters}
+                  className="mt-2 text-sm text-indigo-600 hover:underline"
+                >
+                  Clear all filters
+                </button>
+              </>
+            ) : (
+              <p className="mt-4 text-gray-500">No images found. Upload some garment photos to get started!</p>
+            )}
           </div>
         ) : (
           <>
