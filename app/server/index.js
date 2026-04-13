@@ -4,6 +4,7 @@ import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { getDb } from './db.js';
+import imagesRouter from './routes/images.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT || 3001;
@@ -23,10 +24,8 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-// Routes will be added in subsequent steps
-// app.use('/api/images', imagesRouter);
-// app.use('/api/filters', filtersRouter);
-// app.use('/api/annotations', annotationsRouter);
+// Routes
+app.use('/api/images', imagesRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
