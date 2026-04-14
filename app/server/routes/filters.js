@@ -15,11 +15,24 @@ router.get('/', (req, res) => {
       return rows.map(r => r[column]);
     };
 
+    const distinctJsonValues = (table, column) => {
+      const rows = db.prepare(`
+        SELECT DISTINCT json_each.value as val 
+        FROM ${table}, json_each(${table}.${column}) 
+        WHERE ${column} IS NOT NULL 
+          AND json_valid(${column})
+          AND json_type(${column}) = 'array'
+        ORDER BY val
+      `).all();
+      return rows.map(r => r.val);
+    };
+
     // AI metadata attribute filters
     const filters = {
       garment_type: distinctValues('ai_metadata', 'garment_type'),
       style: distinctValues('ai_metadata', 'style'),
       material: distinctValues('ai_metadata', 'material'),
+      color_palette: distinctJsonValues('ai_metadata', 'color_palette'),
       pattern: distinctValues('ai_metadata', 'pattern'),
       season: distinctValues('ai_metadata', 'season'),
       occasion: distinctValues('ai_metadata', 'occasion'),

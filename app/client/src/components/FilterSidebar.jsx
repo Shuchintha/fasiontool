@@ -4,6 +4,7 @@ const FILTER_LABELS = {
   garment_type: 'Garment Type',
   style: 'Style',
   material: 'Material',
+  color_palette: 'Color Palette',
   pattern: 'Pattern',
   season: 'Season',
   occasion: 'Occasion',
@@ -23,7 +24,7 @@ const MONTH_NAMES = {
 };
 
 const FILTER_ORDER = [
-  'garment_type', 'style', 'material', 'pattern', 'season', 'occasion',
+  'garment_type', 'style', 'material', 'color_palette', 'pattern', 'season', 'occasion',
   'consumer_profile', 'location_continent', 'location_country', 'location_city',
   'designer', 'year', 'month',
 ];

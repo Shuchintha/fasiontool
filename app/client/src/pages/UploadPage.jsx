@@ -166,12 +166,6 @@ export default function UploadPage() {
                 >
                   View Details
                 </button>
-                <button
-                  onClick={() => { setResult(null); setProgress(0); }}
-                  className="bg-gray-800 text-gray-300 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
-                >
-                  Upload Another
-                </button>
               </div>
             </div>
           </div>

@@ -177,6 +177,15 @@ router.get('/search', (req, res) => {
       }
     }
 
+    if (req.query.color_palette) {
+      const colors = req.query.color_palette.split(',').map(v => v.trim()).filter(Boolean);
+      if (colors.length > 0) {
+        const colorConditions = colors.map(() => `EXISTS (SELECT 1 FROM json_each(m.color_palette) WHERE value = ?)`);
+        conditions.push(`(${colorConditions.join(' OR ')})`);
+        params.push(...colors);
+      }
+    }
+
     // Designer filter (from annotations)
     if (req.query.designer) {
       const designers = req.query.designer.split(',').map(v => v.trim()).filter(Boolean);
