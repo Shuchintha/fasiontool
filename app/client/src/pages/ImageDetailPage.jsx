@@ -1,12 +1,14 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { getImage, addAnnotation, updateAnnotation, deleteAnnotation } from '../api';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { getImage, addAnnotation, updateAnnotation, deleteAnnotation, deleteImage } from '../api';
 
 export default function ImageDetailPage() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [deleting, setDeleting] = useState(false);
 
   // Annotation form state
   const [designer, setDesigner] = useState('');
@@ -75,6 +77,18 @@ export default function ImageDetailPage() {
     setNotes('');
   };
 
+  const handleDeleteImage = async () => {
+    if (!window.confirm('Are you sure you want to delete this image? This cannot be undone.')) return;
+    setDeleting(true);
+    try {
+      await deleteImage(id);
+      navigate('/');
+    } catch (err) {
+      setError(err.message);
+      setDeleting(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
@@ -109,7 +123,16 @@ export default function ImageDetailPage() {
             alt={image.original_name}
             className="w-full rounded-xl shadow-sm"
           />
-          <p className="text-xs text-gray-500 mt-2">{image.original_name} &middot; {new Date(image.upload_date).toLocaleDateString()}</p>
+          <div className="flex items-center justify-between mt-2">
+            <p className="text-xs text-gray-500">{image.original_name} &middot; {new Date(image.upload_date).toLocaleDateString()}</p>
+            <button
+              onClick={handleDeleteImage}
+              disabled={deleting}
+              className="text-xs text-red-400 hover:text-red-300 hover:underline disabled:opacity-50"
+            >
+              {deleting ? 'Deleting...' : 'Delete Image'}
+            </button>
+          </div>
         </div>
 
         {/* Details */}

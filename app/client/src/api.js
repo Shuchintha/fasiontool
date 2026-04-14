@@ -68,3 +68,11 @@ export async function deleteAnnotation(annotationId) {
   if (!res.ok) throw new Error('Failed to delete annotation');
   return res.json();
 }
+
+export async function deleteImage(id) {
+  const res = await fetch(`${API_BASE}/images/${id}`, {
+    method: 'DELETE',
+  });
+  if (!res.ok) throw new Error((await res.json()).error || 'Failed to delete image');
+  return res.json();
+}

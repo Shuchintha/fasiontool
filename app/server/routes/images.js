@@ -1,3 +1,4 @@
+import fs from 'fs';
 import { Router } from 'express';
 import multer from 'multer';
 import path from 'path';
@@ -284,6 +285,35 @@ router.get('/:id', (req, res) => {
   } catch (err) {
     console.error('Get image error:', err);
     res.status(500).json({ error: 'Failed to get image' });
+  }
+});
+
+// DELETE /api/images/:id — Delete image from DB and uploads folder
+router.delete('/:id', (req, res) => {
+  try {
+    const db = getDb();
+    const id = parseInt(req.params.id);
+    if (isNaN(id)) return res.status(400).json({ error: 'Invalid image ID' });
+
+    const image = db.prepare('SELECT filename FROM images WHERE id = ?').get(id);
+    if (!image) return res.status(404).json({ error: 'Image not found' });
+
+    // Delete from DB (cascades to ai_metadata, annotations)
+    db.prepare('DELETE FROM images WHERE id = ?').run(id);
+
+    // Remove from FTS index
+    db.prepare('DELETE FROM search_index WHERE image_id = ?').run(id);
+
+    // Delete file from uploads folder
+    const filePath = path.join(UPLOADS_DIR, image.filename);
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath);
+    }
+
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Delete image error:', err);
+    res.status(500).json({ error: 'Failed to delete image' });
   }
 });
 
