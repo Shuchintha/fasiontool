@@ -1,6 +1,6 @@
 # Fashion Garment Classification & Inspiration Web App
 
-A lightweight AI-powered web application that helps fashion designers organize, search, and reuse inspiration imagery captured in the field. Upload garment photos, get automatic AI classification via Google Gemini, and browse/filter your collection with rich metadata.
+A lightweight AI-powered web application that helps fashion designers organize, search, and reuse inspiration imagery captured in the field. Upload garment photos, get automatic AI classification via OpenAI GPT-4o, and browse/filter your collection with rich metadata.
 
 ## Features
 
@@ -17,7 +17,7 @@ A lightweight AI-powered web application that helps fashion designers organize, 
 | Frontend | React 19, Vite 6, Tailwind CSS 3.4, React Router 7 |
 | Backend | Express 4.21, Node.js (ES modules) |
 | Database | SQLite via better-sqlite3, FTS5 for full-text search |
-| AI Model | Google Gemini 2.0 Flash (`gemini-2.0-flash`) |
+| AI Model | OpenAI GPT-4o (`gpt-4o`) |
 | Testing | Vitest 3.1, Supertest |
 
 ## Quick Start
@@ -25,7 +25,7 @@ A lightweight AI-powered web application that helps fashion designers organize, 
 ### Prerequisites
 
 - Node.js 18+
-- A Google Gemini API key ([get one here](https://aistudio.google.com/app/apikey))
+- An OpenAI API key ([get one here](https://platform.openai.com/api-keys))
 
 ### Setup
 
@@ -37,7 +37,7 @@ npm install
 
 # Configure environment
 cp app/server/.env.example app/server/.env
-# Edit .env and add your GEMINI_API_KEY
+# Edit .env and add your OPENAI_API_KEY
 
 # Start development servers (frontend + backend)
 npm run dev
@@ -52,7 +52,7 @@ The app will be available at:
 Create `app/server/.env`:
 
 ```
-GEMINI_API_KEY=your_api_key_here
+OPENAI_API_KEY=your_api_key_here
 PORT=3001
 ```
 
@@ -80,7 +80,7 @@ PORT=3001
 │       │   ├── filters.js     # Dynamic filter generation
 │       │   └── images.js      # Upload, list, search, detail
 │       └── services/
-│           └── classifier.js  # Gemini AI classifier
+│           └── classifier.js  # OpenAI GPT-4o classifier
 ├── eval/                      # Evaluation pipeline
 │   ├── download_images.js     # Pexels image downloader
 │   ├── evaluate.js            # Classification accuracy evaluator
@@ -125,7 +125,7 @@ npx vitest run tests/e2e/
 
 ## Evaluation Pipeline
 
-The eval pipeline benchmarks Gemini classification accuracy against 60 human-labeled ground truth images across 10 fashion categories.
+The eval pipeline benchmarks GPT-4o classification accuracy against 60 human-labeled ground truth images across 10 fashion categories.
 
 ### Running the Evaluation
 
@@ -172,13 +172,13 @@ For a POC/single-designer tool, SQLite offers:
 
 FTS5 contentless tables (`content=''`) avoid data duplication between the main tables and the search index. We use explicit `rowid` management to join FTS results back to the images table, since contentless FTS5 tables don't return stored column values.
 
-### Why Gemini 2.0 Flash?
+### Why GPT-4o?
 
-- Structured JSON output via `responseSchema` — enforces consistent attribute extraction without post-processing
+- Strong vision capabilities — excellent at analyzing fashion imagery with fine-grained detail
+- JSON mode via `response_format` — enforces consistent structured output
 - Fast inference — suitable for interactive upload experience
-- Cost-effective for a POC — generous free tier
 
-**Trade-off**: Classification accuracy depends on image quality and prompt engineering. The structured schema constrains outputs but can miss nuanced fashion details.
+**Trade-off**: Classification accuracy depends on image quality and prompt engineering. Requires an OpenAI API key with vision access.
 
 ### Why No Authentication?
 
@@ -188,8 +188,8 @@ This is a single-designer tool / POC. The "designer" field on annotations serves
 
 1. **No image deletion** — Once uploaded, images can only be managed by clearing the database
 2. **Single-user** — No authentication or multi-user access control
-3. **Classification accuracy** — Depends on Gemini model capabilities; material and pattern identification can be inconsistent for similar-looking fabrics
-4. **No image preprocessing** — Raw images are sent to Gemini without resizing or normalization
+3. **Classification accuracy** — Depends on GPT-4o model capabilities; material and pattern identification can be inconsistent for similar-looking fabrics
+4. **No image preprocessing** — Raw images are sent to GPT-4o without resizing or normalization
 5. **SQLite concurrency** — WAL mode helps but doesn't support true concurrent writes
 6. **Local storage only** — Images stored on disk, no cloud storage integration
 

@@ -58,14 +58,14 @@ export default function FilterSidebar({ filters, activeFilters, searchQuery, onF
             placeholder="Search descriptions..."
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
           />
         </div>
 
         {hasActiveFilters && (
           <button
             onClick={onClear}
-            className="w-full mb-4 text-sm text-indigo-600 hover:text-indigo-800 font-medium"
+            className="w-full mb-4 text-sm text-indigo-400 hover:text-indigo-300 font-medium"
           >
             Clear all filters
           </button>
@@ -82,15 +82,15 @@ export default function FilterSidebar({ filters, activeFilters, searchQuery, onF
             const selectedArr = Array.isArray(selected) ? selected : [selected];
 
             return (
-              <div key={key} className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+              <div key={key} className="bg-gray-900 rounded-lg border border-gray-800 overflow-hidden">
                 <button
                   onClick={() => toggleCollapse(key)}
-                  className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  className="w-full flex items-center justify-between px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-800"
                 >
                   <span>
                     {FILTER_LABELS[key] || key}
                     {selectedArr.length > 0 && (
-                      <span className="ml-1 bg-indigo-100 text-indigo-800 text-xs px-1.5 py-0.5 rounded-full">
+                      <span className="ml-1 bg-indigo-900/50 text-indigo-300 text-xs px-1.5 py-0.5 rounded-full">
                         {selectedArr.length}
                       </span>
                     )}
@@ -110,9 +110,9 @@ export default function FilterSidebar({ filters, activeFilters, searchQuery, onF
                           type="checkbox"
                           checked={selectedArr.includes(val)}
                           onChange={() => toggleValue(key, val)}
-                          className="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          className="rounded border-gray-600 text-indigo-500 focus:ring-indigo-500 bg-gray-800"
                         />
-                        <span className="text-gray-600 truncate">
+                        <span className="text-gray-400 truncate">
                           {key === 'month' ? (MONTH_NAMES[val] || val) : val}
                         </span>
                       </label>

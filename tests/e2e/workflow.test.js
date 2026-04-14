@@ -11,7 +11,7 @@ const TEST_UPLOADS_DIR = path.join(__dirname, 'test_uploads');
 // Set env vars before importing app
 process.env.DB_PATH = TEST_DB_PATH;
 
-// Mock the classifier to avoid needing a Gemini API key
+// Mock the classifier to avoid needing an OpenAI API key
 vi.mock('../../app/server/services/classifier.js', () => ({
   classifyImage: vi.fn().mockResolvedValue({
     description: 'A beautiful red silk evening gown with intricate embroidery',

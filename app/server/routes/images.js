@@ -44,6 +44,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
 
     const db = getDb();
     const { filename, originalname, size, mimetype } = req.file;
+    console.log(`Received upload: ${originalname} (${size} bytes, ${mimetype})`);
 
     // Insert image record
     const insertImage = db.prepare(

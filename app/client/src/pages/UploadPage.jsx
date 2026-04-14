@@ -49,7 +49,7 @@ export default function UploadPage() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Upload Garment Image</h1>
+      <h1 className="text-2xl font-bold text-gray-100 mb-6">Upload Garment Image</h1>
 
       {/* Drop zone */}
       <div
@@ -59,8 +59,8 @@ export default function UploadPage() {
         onDrop={handleDrop}
         className={`border-2 border-dashed rounded-xl p-12 text-center cursor-pointer transition-colors ${
           dragActive
-            ? 'border-indigo-500 bg-indigo-50'
-            : 'border-gray-300 hover:border-gray-400 bg-white'
+            ? 'border-indigo-500 bg-indigo-950/50'
+            : 'border-gray-700 hover:border-gray-500 bg-gray-900'
         }`}
         onClick={() => document.getElementById('file-input').click()}
       >
@@ -71,23 +71,23 @@ export default function UploadPage() {
           onChange={handleFileSelect}
           className="hidden"
         />
-        <svg className="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+        <svg className="mx-auto h-12 w-12 text-gray-500" stroke="currentColor" fill="none" viewBox="0 0 48 48">
           <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-        <p className="mt-4 text-lg text-gray-600">
+        <p className="mt-4 text-lg text-gray-300">
           {dragActive ? 'Drop your image here' : 'Drag & drop a garment photo, or click to browse'}
         </p>
-        <p className="mt-2 text-sm text-gray-400">JPG, PNG, GIF, WebP up to 20MB</p>
+        <p className="mt-2 text-sm text-gray-500">JPG, PNG, GIF, WebP up to 20MB</p>
       </div>
 
       {/* Progress bar */}
       {uploading && (
         <div className="mt-6">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-gray-600">Uploading & classifying...</span>
-            <span className="text-sm text-gray-500">{progress}%</span>
+            <span className="text-sm text-gray-300">Uploading & classifying...</span>
+            <span className="text-sm text-gray-400">{progress}%</span>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
+          <div className="w-full bg-gray-700 rounded-full h-2">
             <div
               className="bg-indigo-600 h-2 rounded-full transition-all duration-500"
               style={{ width: `${progress}%` }}
@@ -98,14 +98,14 @@ export default function UploadPage() {
 
       {/* Error */}
       {error && (
-        <div className="mt-6 bg-red-50 border border-red-200 rounded-lg p-4">
-          <p className="text-red-700">{error}</p>
+        <div className="mt-6 bg-red-900/30 border border-red-800 rounded-lg p-4">
+          <p className="text-red-400">{error}</p>
         </div>
       )}
 
       {/* Results */}
       {result?.image && (
-        <div className="mt-8 bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+        <div className="mt-8 bg-gray-900 rounded-xl shadow-sm border border-gray-800 overflow-hidden">
           <div className="md:flex">
             <div className="md:w-1/3">
               <img
@@ -116,17 +116,17 @@ export default function UploadPage() {
             </div>
             <div className="p-6 md:w-2/3">
               <div className="flex items-center gap-2 mb-4">
-                <span className="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">
+                <span className="bg-indigo-900/50 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded">
                   AI Generated
                 </span>
-                <h2 className="text-lg font-semibold text-gray-900">Classification Results</h2>
+                <h2 className="text-lg font-semibold text-gray-100">Classification Results</h2>
               </div>
 
               {result.classificationError ? (
-                <p className="text-amber-600">Classification failed: {result.classificationError}</p>
+                <p className="text-amber-400">Classification failed: {result.classificationError}</p>
               ) : (
                 <>
-                  <p className="text-gray-700 mb-4">{result.image.description}</p>
+                  <p className="text-gray-300 mb-4">{result.image.description}</p>
                   <div className="grid grid-cols-2 gap-3 text-sm">
                     <Attr label="Garment Type" value={result.image.garment_type} />
                     <Attr label="Style" value={result.image.style} />
@@ -139,21 +139,21 @@ export default function UploadPage() {
                   </div>
                   {result.image.color_palette && (
                     <div className="mt-3">
-                      <span className="text-gray-500 text-xs uppercase">Colors</span>
+                      <span className="text-gray-400 text-xs uppercase">Colors</span>
                       <div className="flex flex-wrap gap-1 mt-1">
                         {(typeof result.image.color_palette === 'string'
                           ? JSON.parse(result.image.color_palette)
                           : result.image.color_palette
                         ).map((color, i) => (
-                          <span key={i} className="bg-gray-100 text-gray-700 px-2 py-0.5 rounded text-xs">{color}</span>
+                          <span key={i} className="bg-gray-800 text-gray-300 px-2 py-0.5 rounded text-xs">{color}</span>
                         ))}
                       </div>
                     </div>
                   )}
                   {result.image.trend_notes && (
                     <div className="mt-3">
-                      <span className="text-gray-500 text-xs uppercase">Trend Notes</span>
-                      <p className="text-gray-600 text-sm mt-1">{result.image.trend_notes}</p>
+                      <span className="text-gray-400 text-xs uppercase">Trend Notes</span>
+                      <p className="text-gray-300 text-sm mt-1">{result.image.trend_notes}</p>
                     </div>
                   )}
                 </>
@@ -162,13 +162,13 @@ export default function UploadPage() {
               <div className="mt-6 flex gap-3">
                 <button
                   onClick={() => navigate(`/image/${result.image.id}`)}
-                  className="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700"
+                  className="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-500"
                 >
                   View Details
                 </button>
                 <button
                   onClick={() => { setResult(null); setProgress(0); }}
-                  className="bg-gray-100 text-gray-700 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-200"
+                  className="bg-gray-800 text-gray-300 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
                 >
                   Upload Another
                 </button>
@@ -185,8 +185,8 @@ function Attr({ label, value }) {
   if (!value || value === 'Unknown') return null;
   return (
     <div>
-      <span className="text-gray-500 text-xs uppercase">{label}</span>
-      <p className="text-gray-900 font-medium">{value}</p>
+      <span className="text-gray-400 text-xs uppercase">{label}</span>
+      <p className="text-gray-100 font-medium">{value}</p>
     </div>
   );
 }

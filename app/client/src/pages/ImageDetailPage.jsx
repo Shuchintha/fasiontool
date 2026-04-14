@@ -86,8 +86,8 @@ export default function ImageDetailPage() {
   if (error || !image) {
     return (
       <div className="text-center py-16">
-        <p className="text-red-600">{error || 'Image not found'}</p>
-        <Link to="/" className="text-indigo-600 hover:underline mt-4 block">Back to library</Link>
+        <p className="text-red-400">{error || 'Image not found'}</p>
+        <Link to="/" className="text-indigo-400 hover:underline mt-4 block">Back to library</Link>
       </div>
     );
   }
@@ -99,7 +99,7 @@ export default function ImageDetailPage() {
 
   return (
     <div>
-      <Link to="/" className="text-sm text-indigo-600 hover:underline mb-4 inline-block">&larr; Back to library</Link>
+      <Link to="/" className="text-sm text-indigo-400 hover:underline mb-4 inline-block">&larr; Back to library</Link>
 
       <div className="grid md:grid-cols-2 gap-8">
         {/* Image */}
@@ -109,21 +109,21 @@ export default function ImageDetailPage() {
             alt={image.original_name}
             className="w-full rounded-xl shadow-sm"
           />
-          <p className="text-xs text-gray-400 mt-2">{image.original_name} &middot; {new Date(image.upload_date).toLocaleDateString()}</p>
+          <p className="text-xs text-gray-500 mt-2">{image.original_name} &middot; {new Date(image.upload_date).toLocaleDateString()}</p>
         </div>
 
         {/* Details */}
         <div className="space-y-6">
           {/* AI Generated Section */}
-          <section className="bg-indigo-50 rounded-xl p-6 border border-indigo-100">
+          <section className="bg-indigo-950/40 rounded-xl p-6 border border-indigo-900/50">
             <div className="flex items-center gap-2 mb-4">
-              <span className="bg-indigo-200 text-indigo-800 text-xs font-semibold px-2.5 py-1 rounded">
+              <span className="bg-indigo-900/50 text-indigo-300 text-xs font-semibold px-2.5 py-1 rounded">
                 AI Generated
               </span>
             </div>
 
             {image.description && (
-              <p className="text-gray-700 mb-4">{image.description}</p>
+              <p className="text-gray-300 mb-4">{image.description}</p>
             )}
 
             <div className="grid grid-cols-2 gap-4 text-sm">
@@ -139,10 +139,10 @@ export default function ImageDetailPage() {
 
             {colors.length > 0 && (
               <div className="mt-4">
-                <span className="text-gray-500 text-xs uppercase">Color Palette</span>
+                <span className="text-gray-400 text-xs uppercase">Color Palette</span>
                 <div className="flex flex-wrap gap-2 mt-1">
                   {colors.map((c, i) => (
-                    <span key={i} className="bg-white text-gray-700 px-2 py-1 rounded text-xs border">{c}</span>
+                    <span key={i} className="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs border border-gray-700">{c}</span>
                   ))}
                 </div>
               </div>
@@ -150,16 +150,16 @@ export default function ImageDetailPage() {
 
             {image.trend_notes && image.trend_notes !== 'Unknown' && (
               <div className="mt-4">
-                <span className="text-gray-500 text-xs uppercase">Trend Notes</span>
-                <p className="text-gray-600 text-sm mt-1">{image.trend_notes}</p>
+                <span className="text-gray-400 text-xs uppercase">Trend Notes</span>
+                <p className="text-gray-300 text-sm mt-1">{image.trend_notes}</p>
               </div>
             )}
           </section>
 
           {/* Designer Notes Section */}
-          <section className="bg-amber-50 rounded-xl p-6 border border-amber-100">
+          <section className="bg-amber-950/30 rounded-xl p-6 border border-amber-900/50">
             <div className="flex items-center gap-2 mb-4">
-              <span className="bg-amber-200 text-amber-800 text-xs font-semibold px-2.5 py-1 rounded">
+              <span className="bg-amber-900/50 text-amber-300 text-xs font-semibold px-2.5 py-1 rounded">
                 Designer Notes
               </span>
             </div>
@@ -168,28 +168,28 @@ export default function ImageDetailPage() {
             {image.annotations?.length > 0 ? (
               <div className="space-y-3 mb-4">
                 {image.annotations.map(annot => (
-                  <div key={annot.id} className="bg-white rounded-lg p-3 border border-amber-200">
+                  <div key={annot.id} className="bg-gray-800 rounded-lg p-3 border border-amber-900/30">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm font-medium text-gray-900">{annot.designer || 'Anonymous'}</span>
+                      <span className="text-sm font-medium text-gray-100">{annot.designer || 'Anonymous'}</span>
                       <div className="flex gap-2">
-                        <button onClick={() => handleEdit(annot)} className="text-xs text-indigo-600 hover:underline">Edit</button>
-                        <button onClick={() => handleDelete(annot.id)} className="text-xs text-red-600 hover:underline">Delete</button>
+                        <button onClick={() => handleEdit(annot)} className="text-xs text-indigo-400 hover:underline">Edit</button>
+                        <button onClick={() => handleDelete(annot.id)} className="text-xs text-red-400 hover:underline">Delete</button>
                       </div>
                     </div>
                     {annot.tags?.length > 0 && (
                       <div className="flex flex-wrap gap-1 mb-1">
                         {annot.tags.map((tag, i) => (
-                          <span key={i} className="bg-amber-100 text-amber-800 text-xs px-2 py-0.5 rounded">{tag}</span>
+                          <span key={i} className="bg-amber-900/40 text-amber-300 text-xs px-2 py-0.5 rounded">{tag}</span>
                         ))}
                       </div>
                     )}
-                    {annot.notes && <p className="text-sm text-gray-600">{annot.notes}</p>}
-                    <p className="text-xs text-gray-400 mt-1">{new Date(annot.created_at).toLocaleString()}</p>
+                    {annot.notes && <p className="text-sm text-gray-300">{annot.notes}</p>}
+                    <p className="text-xs text-gray-500 mt-1">{new Date(annot.created_at).toLocaleString()}</p>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-sm text-gray-500 mb-4">No designer notes yet. Add your observations below.</p>
+              <p className="text-sm text-gray-400 mb-4">No designer notes yet. Add your observations below.</p>
             )}
 
             {/* Add/edit annotation form */}
@@ -199,21 +199,21 @@ export default function ImageDetailPage() {
                 placeholder="Your name"
                 value={designer}
                 onChange={(e) => setDesigner(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
               <input
                 type="text"
                 placeholder="Tags (comma-separated, e.g., artisan, handmade, vibrant)"
                 value={tags}
                 onChange={(e) => setTags(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
               <textarea
                 placeholder="Your notes and observations..."
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 rows={3}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-sm text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
               <div className="flex gap-2">
                 <button
@@ -227,7 +227,7 @@ export default function ImageDetailPage() {
                   <button
                     type="button"
                     onClick={handleCancelEdit}
-                    className="bg-gray-100 text-gray-700 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-200"
+                    className="bg-gray-800 text-gray-300 px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-700"
                   >
                     Cancel
                   </button>
@@ -245,8 +245,8 @@ function Attr({ label, value }) {
   if (!value || value === 'Unknown') return null;
   return (
     <div>
-      <span className="text-gray-500 text-xs uppercase">{label}</span>
-      <p className="text-gray-900 font-medium">{value}</p>
+      <span className="text-gray-400 text-xs uppercase">{label}</span>
+      <p className="text-gray-100 font-medium">{value}</p>
     </div>
   );
 }

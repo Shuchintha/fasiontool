@@ -5,10 +5,10 @@
  * and reports per-attribute accuracy.
  * 
  * Usage: 
- *   cd app/server && cp .env.example .env  (set your GEMINI_API_KEY)
+ *   cd app/server && cp .env.example .env  (set your OPENAI_API_KEY)
  *   node eval/evaluate.js
  * 
- * Requires: eval images downloaded in eval/images/ and GEMINI_API_KEY set.
+ * Requires: eval images downloaded in eval/images/ and OPENAI_API_KEY set.
  */
 
 import fs from 'fs';

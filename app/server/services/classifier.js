@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import OpenAI from 'openai';
 import fs from 'fs';
 import path from 'path';
 
@@ -20,51 +20,19 @@ For structured attributes, extract the following:
 - location_country: Specific country if determinable from context clues. Use "Unknown" if not determinable.
 - location_city: Specific city if determinable from context clues. Use "Unknown" if not determinable.
 
-Be accurate and specific. If an attribute cannot be determined from the image, use your best professional judgment based on visual cues.`;
+Respond ONLY with a valid JSON object containing: description, garment_type, style, material, color_palette (array of strings), pattern, season, occasion, consumer_profile, trend_notes, location_continent, location_country, location_city.`;
 
-const RESPONSE_SCHEMA = {
-  type: 'object',
-  properties: {
-    description: { type: 'string', description: 'Rich natural-language description of the garment/fashion image' },
-    garment_type: { type: 'string' },
-    style: { type: 'string' },
-    material: { type: 'string' },
-    color_palette: { type: 'array', items: { type: 'string' } },
-    pattern: { type: 'string' },
-    season: { type: 'string' },
-    occasion: { type: 'string' },
-    consumer_profile: { type: 'string' },
-    trend_notes: { type: 'string' },
-    location_continent: { type: 'string' },
-    location_country: { type: 'string' },
-    location_city: { type: 'string' },
-  },
-  required: [
-    'description', 'garment_type', 'style', 'material', 'color_palette',
-    'pattern', 'season', 'occasion', 'consumer_profile', 'trend_notes',
-    'location_continent', 'location_country', 'location_city',
-  ],
-};
+let client;
 
-let genAI;
-let model;
-
-function getModel() {
-  if (!model) {
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey || apiKey === 'your_gemini_api_key_here') {
-      throw new Error('GEMINI_API_KEY is not configured. Set it in app/server/.env');
+function getClient() {
+  if (!client) {
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey || apiKey === 'your_openai_api_key_here') {
+      throw new Error('OPENAI_API_KEY is not configured. Set it in app/server/.env');
     }
-    genAI = new GoogleGenerativeAI(apiKey);
-    model = genAI.getGenerativeModel({
-      model: 'gemini-2.0-flash',
-      generationConfig: {
-        responseMimeType: 'application/json',
-        responseSchema: RESPONSE_SCHEMA,
-      },
-    });
+    client = new OpenAI({ apiKey });
   }
-  return model;
+  return client;
 }
 
 function getMimeType(filePath) {
@@ -80,23 +48,32 @@ function getMimeType(filePath) {
 }
 
 export async function classifyImage(imagePath) {
-  const m = getModel();
+  const openai = getClient();
 
   const imageData = fs.readFileSync(imagePath);
   const base64Image = imageData.toString('base64');
   const mimeType = getMimeType(imagePath);
+  const dataUrl = `data:${mimeType};base64,${base64Image}`;
 
-  const result = await m.generateContent([
-    {
-      inlineData: {
-        data: base64Image,
-        mimeType,
+  const result = await openai.chat.completions.create({
+    model: 'gpt-4o',
+    response_format: { type: 'json_object' },
+    messages: [
+      {
+        role: 'user',
+        content: [
+          {
+            type: 'image_url',
+            image_url: { url: dataUrl, detail: 'high' },
+          },
+          { type: 'text', text: FASHION_PROMPT },
+        ],
       },
-    },
-    FASHION_PROMPT,
-  ]);
+    ],
+    max_tokens: 1024,
+  });
 
-  const responseText = result.response.text();
+  const responseText = result.choices[0].message.content;
   const parsed = JSON.parse(responseText);
 
   return parseClassifierOutput(parsed, responseText);
