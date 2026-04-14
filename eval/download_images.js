@@ -6,7 +6,7 @@
  * This script downloads ~60 fashion/garment images for the evaluation pipeline.
  * Delete this script after downloading images.
  */
-
+import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

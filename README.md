@@ -37,8 +37,10 @@ npm install
 
 # Configure environment
 cp app/server/.env.example app/server/.env
-# Edit .env and add your OPENAI_API_KEY
-
+# add .env to root and add your PORT, OPENAI_API_KEY and PEXELS_API_KEY
+PEXELS_API_KEY=your_api_key_here
+OPENAI_API_KEY=your_api_key_here
+PORT=3001
 # Start development servers (frontend + backend)
 npm run dev
 ```
@@ -47,14 +49,8 @@ The app will be available at:
 - **Frontend**: http://localhost:5173
 - **Backend API**: http://localhost:3001
 
-### Environment Variables
 
-Create `app/server/.env`:
 
-```
-OPENAI_API_KEY=your_api_key_here
-PORT=3001
-```
 
 ## Project Structure
 
@@ -130,7 +126,7 @@ The eval pipeline benchmarks GPT-4o classification accuracy against 60 human-lab
 ### Running the Evaluation
 
 ```bash
-# 1. Download test images from Pexels (requires PEXELS_API_KEY in .env)
+# 1. Download test images from Pexels (requires PEXELS_API_KEY in root .env file)
 node eval/download_images.js
 
 # 2. Run evaluation against ground truth
@@ -186,12 +182,11 @@ This is a single-designer tool / POC. The "designer" field on annotations serves
 
 ## Limitations
 
-1. **No image deletion** — Once uploaded, images can only be managed by clearing the database
-2. **Single-user** — No authentication or multi-user access control
-3. **Classification accuracy** — Depends on GPT-4o model capabilities; material and pattern identification can be inconsistent for similar-looking fabrics
-4. **No image preprocessing** — Raw images are sent to GPT-4o without resizing or normalization
-5. **SQLite concurrency** — WAL mode helps but doesn't support true concurrent writes
-6. **Local storage only** — Images stored on disk, no cloud storage integration
+1. **Single-user** — No authentication or multi-user access control
+2. **Classification accuracy** — Depends on GPT-4o model capabilities; material and pattern identification can be inconsistent for similar-looking fabrics
+3. **No image preprocessing** — Raw images are sent to GPT-4o without resizing or normalization
+4. **SQLite concurrency** — WAL mode helps but doesn't support true concurrent writes
+5. **Local storage only** — Images stored on disk, no cloud storage integration
 
 ## Development
 
