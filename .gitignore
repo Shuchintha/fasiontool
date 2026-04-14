@@ -7,5 +7,5 @@ app/server/uploads/*
 app/server/data/*
 !app/server/data/.gitkeep
 eval/images/
-eval/eval_results.json
+# eval/eval_results.json (consider ignoring if you don't want to track evaluation results)
 .DS_Store

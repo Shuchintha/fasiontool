@@ -1,0 +1,2447 @@
+{
+  "evaluated_at": "2026-04-14T03:47:06.367Z",
+  "images_evaluated": 60,
+  "images_total": 60,
+  "errors": 0,
+  "summary": {
+    "garment_type": {
+      "exact_matches": 46,
+      "fuzzy_matches": 2,
+      "mismatches": 12,
+      "skipped": 0,
+      "total_evaluated": 60,
+      "accuracy_pct": 80,
+      "exact_accuracy_pct": 76.7
+    },
+    "style": {
+      "exact_matches": 55,
+      "fuzzy_matches": 0,
+      "mismatches": 5,
+      "skipped": 0,
+      "total_evaluated": 60,
+      "accuracy_pct": 91.7,
+      "exact_accuracy_pct": 91.7
+    },
+    "material": {
+      "exact_matches": 39,
+      "fuzzy_matches": 1,
+      "mismatches": 20,
+      "skipped": 0,
+      "total_evaluated": 60,
+      "accuracy_pct": 66.7,
+      "exact_accuracy_pct": 65
+    },
+    "occasion": {
+      "exact_matches": 57,
+      "fuzzy_matches": 0,
+      "mismatches": 3,
+      "skipped": 0,
+      "total_evaluated": 60,
+      "accuracy_pct": 95,
+      "exact_accuracy_pct": 95
+    }
+  },
+  "details": [
+    {
+      "filename": "eval_001.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "satin",
+        "occasion": "evening",
+        "description": "The garment displayed is an elegant dress featuring a fitted bodice adorned with intricate beading and embroidery, showcasing a vibrant blend of colors and abstract patterns. It is crafted with a one-"
+      },
+      "ground_truth": {
+        "filename": "eval_001.jpeg",
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "beaded fabric",
+        "occasion": "evening",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "dress",
+          "predicted": "dress",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "beaded fabric",
+          "predicted": "satin",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "evening",
+          "predicted": "evening",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_002.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "satin",
+        "occasion": "evening",
+        "description": "The garment is a fitted, sleeveless dress with sheer black mesh covering the shoulders and arms, featuring delicate floral applique on the bodice. It showcases a sleek style with a muted gray color an"
+      },
+      "ground_truth": {
+        "filename": "eval_002.jpeg",
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "satin",
+        "occasion": "evening",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "dress",
+          "predicted": "dress",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "satin",
+          "predicted": "satin",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "evening",
+          "predicted": "evening",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_003.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "satin",
+        "occasion": "evening",
+        "description": "The image features a woman wearing a formal, floor-length gown with a fitted silhouette and flared hem. The dress is made of a satin-like, shiny fabric that provides a luxurious sheen. Its design incl"
+      },
+      "ground_truth": {
+        "filename": "eval_003.jpeg",
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "satin",
+        "occasion": "evening",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "dress",
+          "predicted": "dress",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "satin",
+          "predicted": "satin",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "evening",
+          "predicted": "evening",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_004.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "chiffon",
+        "occasion": "evening",
+        "description": "The dress features a fitted silhouette with a full-length hem, showcasing an elegant blend of sophistication and subtle intrigue. It appears to be made from a lightweight, sheer material, possibly chi"
+      },
+      "ground_truth": {
+        "filename": "eval_004.jpeg",
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "satin",
+        "occasion": "evening",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "dress",
+          "predicted": "dress",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "satin",
+          "predicted": "chiffon",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "evening",
+          "predicted": "evening",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_005.jpeg",
+      "prediction": {
+        "garment_type": "jumpsuit",
+        "style": "bohemian",
+        "material": "linen",
+        "occasion": "casual everyday",
+        "description": "The image showcases a series of garments on hangers, with the foreground highlighting a brown long-sleeve jumpsuit featuring a central knot detail and a flowing, loose silhouette. The fabric appears t"
+      },
+      "ground_truth": {
+        "filename": "eval_005.jpeg",
+        "garment_type": "dress",
+        "style": "bohemian",
+        "material": "linen",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "dress",
+          "predicted": "jumpsuit",
+          "match": "mismatch"
+        },
+        "style": {
+          "expected": "bohemian",
+          "predicted": "bohemian",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "linen",
+          "predicted": "linen",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_006.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "romantic",
+        "material": "chiffon",
+        "occasion": "evening",
+        "description": "The image features a woman seated on outdoor stone steps, wearing a flowing, pleated long dress. The garment blends a classic silhouette with sheer, black mesh paneling at the shoulders, giving it a m"
+      },
+      "ground_truth": {
+        "filename": "eval_006.jpeg",
+        "garment_type": "dress",
+        "style": "romantic",
+        "material": "polyester",
+        "occasion": "evening",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "dress",
+          "predicted": "dress",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "romantic",
+          "predicted": "romantic",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "chiffon",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "evening",
+          "predicted": "evening",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_007.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "satin",
+        "occasion": "evening",
+        "description": "The garment is a striking blue dress featuring a sleek, fitted bodice and a high slit up the front. The design is enhanced by layers of sheer ruffled fabric cascading down from the hip, adding volume "
+      },
+      "ground_truth": {
+        "filename": "eval_007.jpeg",
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "tulle",
+        "occasion": "evening",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "dress",
+          "predicted": "dress",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "tulle",
+          "predicted": "satin",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "evening",
+          "predicted": "evening",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_008.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "sequin",
+        "occasion": "evening",
+        "description": "The garment is a striking black evening gown adorned with shimmering sequins, creating a captivating sparkle under the lights. It features a fitted bodice with thin spaghetti straps, flowing into a fl"
+      },
+      "ground_truth": {
+        "filename": "eval_008.jpeg",
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "sequin",
+        "occasion": "evening",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "dress",
+          "predicted": "dress",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "sequin",
+          "predicted": "sequin",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "evening",
+          "predicted": "evening",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_009.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "romantic",
+        "material": "polyester",
+        "occasion": "evening",
+        "description": "The woman is wearing a long, elegant dress with a fitted bodice and a voluminous skirt, creating a classic silhouette. The fabric appears to be a soft material, possibly polyester or a blend, in a mut"
+      },
+      "ground_truth": {
+        "filename": "eval_009.jpeg",
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "chiffon",
+        "occasion": "evening",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "dress",
+          "predicted": "dress",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "romantic",
+          "match": "mismatch"
+        },
+        "material": {
+          "expected": "chiffon",
+          "predicted": "polyester",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "evening",
+          "predicted": "evening",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_010.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "sequin",
+        "occasion": "evening",
+        "description": "The garment is a dazzling black sequin dress with statement puff sleeves, crafted with an apparent focus on glamour and elegance. Its fitted silhouette and short length suggest a design meant to empha"
+      },
+      "ground_truth": {
+        "filename": "eval_010.jpeg",
+        "garment_type": "dress",
+        "style": "formal",
+        "material": "sequins",
+        "occasion": "evening",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "dress",
+          "predicted": "dress",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "sequins",
+          "predicted": "sequin",
+          "match": "fuzzy"
+        },
+        "occasion": {
+          "expected": "evening",
+          "predicted": "evening",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_011.jpeg",
+      "prediction": {
+        "garment_type": "shirt",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "description": "The outfit showcases a blend of streetwear elements, featuring a white oversized T-shirt with a bold red logo graphic, paired with red plaid trousers. The casual cap complements the look, and the blac"
+      },
+      "ground_truth": {
+        "filename": "eval_011.jpeg",
+        "garment_type": "shirt",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "shirt",
+          "predicted": "shirt",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "streetwear",
+          "predicted": "streetwear",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_012.jpeg",
+      "prediction": {
+        "garment_type": "jacket",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "description": "The individual is dressed in a coordinated streetwear ensemble, featuring a light-colored jacket and matching pants. The outfit showcases a monochromatic palette with a touch of urban style, complemen"
+      },
+      "ground_truth": {
+        "filename": "eval_012.jpeg",
+        "garment_type": "jacket",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket",
+          "predicted": "jacket",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "streetwear",
+          "predicted": "streetwear",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_013.jpeg",
+      "prediction": {
+        "garment_type": "jacket",
+        "style": "streetwear",
+        "material": "leather",
+        "occasion": "casual everyday",
+        "description": "The ensemble features a classic streetwear aesthetic, comprising an oversized black leather jacket adorned with bold patches and text graphics. The look is complemented by baggy denim jeans, contribut"
+      },
+      "ground_truth": {
+        "filename": "eval_013.jpeg",
+        "garment_type": "jacket",
+        "style": "streetwear",
+        "material": "denim",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket",
+          "predicted": "jacket",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "streetwear",
+          "predicted": "streetwear",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "denim",
+          "predicted": "leather",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_014.jpeg",
+      "prediction": {
+        "garment_type": "shirt",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "description": "The outfit features an oversized orange shirt with a bold black stripe across the chest, creating a striking contrast. The shirt is paired with fitted black leggings, complemented by a black bucket ha"
+      },
+      "ground_truth": {
+        "filename": "eval_014.jpeg",
+        "garment_type": "jacket",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket",
+          "predicted": "shirt",
+          "match": "mismatch"
+        },
+        "style": {
+          "expected": "streetwear",
+          "predicted": "streetwear",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_015.jpeg",
+      "prediction": {
+        "garment_type": "vest",
+        "style": "streetwear",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "description": "The image showcases a streetwear ensemble featuring a layered look. The main focus is a black puffer vest worn over a royal blue hoodie, paired with loose-fitting black trousers and white sneakers. Th"
+      },
+      "ground_truth": {
+        "filename": "eval_015.jpeg",
+        "garment_type": "vest",
+        "style": "streetwear",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "vest",
+          "predicted": "vest",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "streetwear",
+          "predicted": "streetwear",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "polyester",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_016.jpeg",
+      "prediction": {
+        "garment_type": "jacket",
+        "style": "streetwear",
+        "material": "fleece",
+        "occasion": "casual everyday",
+        "description": "The outfit features a cozy, oversized beige fleece jacket paired with light-washed, distressed jeans. The casual ensemble is accessorized with white sneakers, a black cap, and futuristic white sunglas"
+      },
+      "ground_truth": {
+        "filename": "eval_016.jpeg",
+        "garment_type": "jacket",
+        "style": "streetwear",
+        "material": "fleece",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket",
+          "predicted": "jacket",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "streetwear",
+          "predicted": "streetwear",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "fleece",
+          "predicted": "fleece",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_017.jpeg",
+      "prediction": {
+        "garment_type": "vest",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "description": "The individual is wearing a visually striking streetwear outfit characterized by layered garments. The ensemble includes a white shirt underneath a black tactical vest, paired with black cargo pants. "
+      },
+      "ground_truth": {
+        "filename": "eval_017.jpeg",
+        "garment_type": "vest",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "vest",
+          "predicted": "vest",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "streetwear",
+          "predicted": "streetwear",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_018.jpeg",
+      "prediction": {
+        "garment_type": "shirt",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "description": "The outfit features a casual, relaxed look with a plaid shirt and loose-fitting pants, embodying a streetwear aesthetic. The oversized plaid shirt is paired with a baseball cap and chunky sneakers, cr"
+      },
+      "ground_truth": {
+        "filename": "eval_018.jpeg",
+        "garment_type": "shirt",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "shirt",
+          "predicted": "shirt",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "streetwear",
+          "predicted": "streetwear",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_019.jpeg",
+      "prediction": {
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "satin",
+        "occasion": "wedding",
+        "description": "This is a formal blue suit jacket with a sleek and polished appearance, hanging on a tree trunk adorned with greenery. The fabric has a smooth texture, likely made from a satin blend, giving it a slig"
+      },
+      "ground_truth": {
+        "filename": "eval_019.jpeg",
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "satin",
+        "occasion": "wedding",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "suit",
+          "predicted": "suit",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "satin",
+          "predicted": "satin",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "wedding",
+          "predicted": "wedding",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_020.jpeg",
+      "prediction": {
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "blend",
+        "occasion": "wedding",
+        "description": "The image showcases a classic cream-colored double-breasted suit jacket, exhibiting formal elegance. The jacket features a notched lapel and is styled with a rich burgundy bow tie and pocket square, c"
+      },
+      "ground_truth": {
+        "filename": "eval_020.jpeg",
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "linen",
+        "occasion": "wedding",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "suit",
+          "predicted": "suit",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "linen",
+          "predicted": "blend",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "wedding",
+          "predicted": "wedding",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_021.jpeg",
+      "prediction": {
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "wool",
+        "occasion": "wedding",
+        "description": "This is a well-tailored formal men's suit jacket in a neutral beige color, designed with a double-breasted construction. It is adorned with a vibrant red bow tie and matching pocket square, enhancing "
+      },
+      "ground_truth": {
+        "filename": "eval_021.jpeg",
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "satin",
+        "occasion": "wedding",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "suit",
+          "predicted": "suit",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "satin",
+          "predicted": "wool",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "wedding",
+          "predicted": "wedding",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_022.jpeg",
+      "prediction": {
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "wool",
+        "occasion": "office",
+        "description": "The image depicts a group of four men wearing formal suits, each styled in a distinct yet complementary manner. The suits are well-tailored, featuring a variety of colors including dark brown, black, "
+      },
+      "ground_truth": {
+        "filename": "eval_022.jpeg",
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "polyester",
+        "occasion": "office",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "suit",
+          "predicted": "suit",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "wool",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "office",
+          "predicted": "office",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_023.jpeg",
+      "prediction": {
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "polyester",
+        "occasion": "office",
+        "description": "The individual is wearing a tailored teal suit that exudes a modern formal aesthetic. The suit comprises a sleek, single-breasted jacket and matching trousers, paired with a white dress shirt and a bl"
+      },
+      "ground_truth": {
+        "filename": "eval_023.jpeg",
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "polyester",
+        "occasion": "office",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "suit",
+          "predicted": "suit",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "polyester",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "office",
+          "predicted": "office",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_024.jpeg",
+      "prediction": {
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "wool",
+        "occasion": "wedding",
+        "description": "The image depicts a man wearing a well-fitted three-piece suit in a classic, formal style. The suit is composed of a jacket, a vest, and trousers, all tailored from a solid, textural fabric that sugge"
+      },
+      "ground_truth": {
+        "filename": "eval_024.jpeg",
+        "garment_type": "suit",
+        "style": "formal",
+        "material": "wool",
+        "occasion": "office",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "suit",
+          "predicted": "suit",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "formal",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "wool",
+          "predicted": "wool",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "office",
+          "predicted": "wedding",
+          "match": "mismatch"
+        }
+      }
+    },
+    {
+      "filename": "eval_025.jpeg",
+      "prediction": {
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "description": "The image features a young man wearing a quilted jacket with a front zip closure, which appears to be made of polyester. The jacket is a deep brown color, styled over a light gray t-shirt and paired w"
+      },
+      "ground_truth": {
+        "filename": "eval_025.jpeg",
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket",
+          "predicted": "jacket",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "casual",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "polyester",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_026.jpeg",
+      "prediction": {
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "description": "The garment is a varsity-style jacket with a rich burgundy color complemented by contrasting white sleeves and trim. It features a snap button closure and sports embroidered details for added flair. T"
+      },
+      "ground_truth": {
+        "filename": "eval_026.jpeg",
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket",
+          "predicted": "jacket",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "casual",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "polyester",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_027.jpeg",
+      "prediction": {
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "fleece",
+        "occasion": "casual everyday",
+        "description": "The image features a man wearing a tan fleece jacket with a high collar. The jacket includes pockets on the sleeves and a round black patch, indicating a casual, outdoor-ready design. The fabric appea"
+      },
+      "ground_truth": {
+        "filename": "eval_027.jpeg",
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "fleece",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket",
+          "predicted": "jacket",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "casual",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "fleece",
+          "predicted": "fleece",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_028.jpeg",
+      "prediction": {
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "leather",
+        "occasion": "casual everyday",
+        "description": "The individual is wearing a classic brown leather jacket over a white t-shirt, paired with blue jeans, creating a timeless casual look. The leather jacket features a clean design with a smooth texture"
+      },
+      "ground_truth": {
+        "filename": "eval_028.jpeg",
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "leather",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket",
+          "predicted": "jacket",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "casual",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "leather",
+          "predicted": "leather",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_029.jpeg",
+      "prediction": {
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "description": "The image showcases a woman wearing a vibrant red puffer jacket with a faux fur-lined hood, exuding a cozy yet stylish aesthetic. The jacket is paired with a yellow sweater underneath, adding a pop of"
+      },
+      "ground_truth": {
+        "filename": "eval_029.jpeg",
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket",
+          "predicted": "jacket",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "casual",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "polyester",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_030.jpeg",
+      "prediction": {
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "description": "The ensemble features a man wearing a brown jacket with a shearling collar, paired with a deep red V-neck shirt. The jacket, likely made of a durable material, suggests a casual style suitable for coo"
+      },
+      "ground_truth": {
+        "filename": "eval_030.jpeg",
+        "garment_type": "jacket",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket",
+          "predicted": "jacket",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "casual",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "polyester",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_031.jpeg",
+      "prediction": {
+        "garment_type": "jacket",
+        "style": "bohemian",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "description": "The image features a woman in a casual and relaxed setting. She is wearing a loose, kimono-style jacket with wide sleeves, made from a textured fabric that combines multiple colors in a striped patter"
+      },
+      "ground_truth": {
+        "filename": "eval_031.jpeg",
+        "garment_type": "blouse",
+        "style": "bohemian",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "blouse",
+          "predicted": "jacket",
+          "match": "mismatch"
+        },
+        "style": {
+          "expected": "bohemian",
+          "predicted": "bohemian",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_032.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "bohemian",
+        "material": "cotton",
+        "occasion": "festival",
+        "description": "The garment is a bohemian-style dress with an intricate abstract pattern in vibrant, cool colors. It features a cinched waist with a brown corset-like belt accentuating the silhouette, and long, flowi"
+      },
+      "ground_truth": {
+        "filename": "eval_032.jpeg",
+        "garment_type": "dress",
+        "style": "bohemian",
+        "material": "polyester",
+        "occasion": "festival",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "dress",
+          "predicted": "dress",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "bohemian",
+          "predicted": "bohemian",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "cotton",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "festival",
+          "predicted": "festival",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_033.jpeg",
+      "prediction": {
+        "garment_type": "skirt",
+        "style": "bohemian",
+        "material": "cotton",
+        "occasion": "festival",
+        "description": "The ensemble features a bohemian style with a free-flowing, patchwork skirt that blends various earthy tones and patterns. The skirt is complemented by a sleeveless top and a loosely draped black jack"
+      },
+      "ground_truth": {
+        "filename": "eval_033.jpeg",
+        "garment_type": "skirt",
+        "style": "bohemian",
+        "material": "mixed fabrics",
+        "occasion": "festival",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "skirt",
+          "predicted": "skirt",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "bohemian",
+          "predicted": "bohemian",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "mixed fabrics",
+          "predicted": "cotton",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "festival",
+          "predicted": "festival",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_034.jpeg",
+      "prediction": {
+        "garment_type": "shawl",
+        "style": "bohemian",
+        "material": "knit",
+        "occasion": "festival",
+        "description": "The outfit features a bohemian aesthetic, characterized by a crocheted top layered with a richly patterned shawl. The shawl has a detailed woven texture, showcasing intricate geometric designs, and dr"
+      },
+      "ground_truth": {
+        "filename": "eval_034.jpeg",
+        "garment_type": "shawl",
+        "style": "bohemian",
+        "material": "knit",
+        "occasion": "festival",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "shawl",
+          "predicted": "shawl",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "bohemian",
+          "predicted": "bohemian",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "knit",
+          "predicted": "knit",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "festival",
+          "predicted": "festival",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_035.jpeg",
+      "prediction": {
+        "garment_type": "skirt",
+        "style": "bohemian",
+        "material": "cotton, embellished sheer fabric",
+        "occasion": "festival",
+        "description": "The image showcases a woman dressed in a blend of traditional and modern styles, featuring a white t-shirt paired with a black, sheer embellished skirt and veil. The ensemble is adorned with sequins a"
+      },
+      "ground_truth": {
+        "filename": "eval_035.jpeg",
+        "garment_type": "skirt",
+        "style": "bohemian",
+        "material": "cotton, sequins",
+        "occasion": "festival",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "skirt",
+          "predicted": "skirt",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "bohemian",
+          "predicted": "bohemian",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton, sequins",
+          "predicted": "cotton, embellished sheer fabric",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "festival",
+          "predicted": "festival",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_036.jpeg",
+      "prediction": {
+        "garment_type": "robe",
+        "style": "traditional",
+        "material": "cotton",
+        "occasion": "festival",
+        "description": "The garment is a traditional robe with a loose-fitting silhouette, characterized by a vibrant combination of red and green vertical stripes. It features bold, hand-embroidered text on the back, adding"
+      },
+      "ground_truth": {
+        "filename": "eval_036.jpeg",
+        "garment_type": "robe",
+        "style": "traditional",
+        "material": "cotton",
+        "occasion": "festival",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "robe",
+          "predicted": "robe",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "traditional",
+          "predicted": "traditional",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "festival",
+          "predicted": "festival",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_037.jpeg",
+      "prediction": {
+        "garment_type": "robe",
+        "style": "traditional",
+        "material": "brocade",
+        "occasion": "festival",
+        "description": "The garment features traditional, vibrant attire with loose-fitting, multi-layered construction. Rich gold and green fabrics, adorned with colorful tassels and intricate embroidery, suggest a ceremoni"
+      },
+      "ground_truth": {
+        "filename": "eval_037.jpeg",
+        "garment_type": "robe",
+        "style": "traditional",
+        "material": "silk",
+        "occasion": "festival",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "robe",
+          "predicted": "robe",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "traditional",
+          "predicted": "traditional",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "silk",
+          "predicted": "brocade",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "festival",
+          "predicted": "festival",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_038.jpeg",
+      "prediction": {
+        "garment_type": "traditional outfit",
+        "style": "bohemian",
+        "material": "cotton",
+        "occasion": "festival",
+        "description": "The garments showcased are traditional outfits displaying intricate craftsmanship and vibrant aesthetics. The left garment features detailed embroidery with bold red, blue, and black hues, adorned wit"
+      },
+      "ground_truth": {
+        "filename": "eval_038.jpeg",
+        "garment_type": "traditional attire",
+        "style": "bohemian",
+        "material": "unknown",
+        "occasion": "festival",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "traditional attire",
+          "predicted": "traditional outfit",
+          "match": "mismatch"
+        },
+        "style": {
+          "expected": "bohemian",
+          "predicted": "bohemian",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "unknown",
+          "predicted": "cotton",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "festival",
+          "predicted": "festival",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_039.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "traditional",
+        "material": "linen",
+        "occasion": "festival",
+        "description": "The garment is a beautifully detailed traditional dress featuring intricate embroidery and beadwork. The fabric appears to be lightweight, with a natural texture, suitable for warm climates. The styli"
+      },
+      "ground_truth": {
+        "filename": "eval_039.jpeg",
+        "garment_type": "robe",
+        "style": "traditional",
+        "material": "embroidered fabric",
+        "occasion": "festival",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "robe",
+          "predicted": "dress",
+          "match": "mismatch"
+        },
+        "style": {
+          "expected": "traditional",
+          "predicted": "traditional",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "embroidered fabric",
+          "predicted": "linen",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "festival",
+          "predicted": "festival",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_040.jpeg",
+      "prediction": {
+        "garment_type": "wrap",
+        "style": "traditional",
+        "material": "cotton",
+        "occasion": "festival",
+        "description": "The garment consists of a draped ensemble that resembles a traditional wrap or sari. It features intricate beadwork and is accessorized with layered necklaces and a headpiece, adding cultural and cere"
+      },
+      "ground_truth": {
+        "filename": "eval_040.jpeg",
+        "garment_type": "traditional wrap",
+        "style": "formal",
+        "material": "cotton",
+        "occasion": "festival",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "traditional wrap",
+          "predicted": "wrap",
+          "match": "fuzzy"
+        },
+        "style": {
+          "expected": "formal",
+          "predicted": "traditional",
+          "match": "mismatch"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "festival",
+          "predicted": "festival",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_041.jpeg",
+      "prediction": {
+        "garment_type": "jumpsuit",
+        "style": "athleisure",
+        "material": "polyester",
+        "occasion": "activewear",
+        "description": "The image depicts a young individual wearing a vibrant pink athletic ensemble, laying on a track field. The sleeveless top features a prominent white '98' printed design, reflecting a sporty aesthetic"
+      },
+      "ground_truth": {
+        "filename": "eval_041.jpeg",
+        "garment_type": "top",
+        "style": "athleisure",
+        "material": "polyester",
+        "occasion": "activewear",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "top",
+          "predicted": "jumpsuit",
+          "match": "mismatch"
+        },
+        "style": {
+          "expected": "athleisure",
+          "predicted": "athleisure",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "polyester",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "activewear",
+          "predicted": "activewear",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_042.jpeg",
+      "prediction": {
+        "garment_type": "tank top",
+        "style": "athleisure",
+        "material": "polyester",
+        "occasion": "activewear",
+        "description": "The image features an individual lying on a track field, wearing a sporty, body-hugging red tank top and matching athletic leggings. The tank top displays a bold white number print, adding a casual an"
+      },
+      "ground_truth": {
+        "filename": "eval_042.jpeg",
+        "garment_type": "athletic ensemble",
+        "style": "athleisure",
+        "material": "polyester",
+        "occasion": "activewear",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "athletic ensemble",
+          "predicted": "tank top",
+          "match": "mismatch"
+        },
+        "style": {
+          "expected": "athleisure",
+          "predicted": "athleisure",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "polyester",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "activewear",
+          "predicted": "activewear",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_043.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "athleisure",
+        "material": "polyester",
+        "occasion": "activewear",
+        "description": "The image captures a woman in a striking, form-fitting red tank dress that emphasizes athleticism and style. The dress has a sleek, minimal design, perfect for movement, likely made from a comfortable"
+      },
+      "ground_truth": {
+        "filename": "eval_043.jpeg",
+        "garment_type": "activewear",
+        "style": "athleisure",
+        "material": "polyester",
+        "occasion": "activewear",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "activewear",
+          "predicted": "dress",
+          "match": "mismatch"
+        },
+        "style": {
+          "expected": "athleisure",
+          "predicted": "athleisure",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "polyester",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "activewear",
+          "predicted": "activewear",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_044.jpeg",
+      "prediction": {
+        "garment_type": "skirt",
+        "style": "athleisure",
+        "material": "polyester",
+        "occasion": "activewear",
+        "description": "The outfit features a sporty and vibrant aesthetic with a focus on comfort and performance, suitable for a tennis setting. The person is wearing a bright pink sleeveless top paired with a white tennis"
+      },
+      "ground_truth": {
+        "filename": "eval_044.jpeg",
+        "garment_type": "athletic tank top",
+        "style": "athleisure",
+        "material": "synthetic",
+        "occasion": "activewear",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "athletic tank top",
+          "predicted": "skirt",
+          "match": "mismatch"
+        },
+        "style": {
+          "expected": "athleisure",
+          "predicted": "athleisure",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "synthetic",
+          "predicted": "polyester",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "activewear",
+          "predicted": "activewear",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_045.jpeg",
+      "prediction": {
+        "garment_type": "jumpsuit",
+        "style": "athleisure",
+        "material": "polyester",
+        "occasion": "activewear",
+        "description": "The outfit features a vibrant, fitted athletic jumpsuit with bold color blocking in red, yellow, and navy. It is paired with bright orange running shoes and a white visor, indicating a focus on high-p"
+      },
+      "ground_truth": {
+        "filename": "eval_045.jpeg",
+        "garment_type": "leggings",
+        "style": "athleisure",
+        "material": "polyester",
+        "occasion": "activewear",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "leggings",
+          "predicted": "jumpsuit",
+          "match": "mismatch"
+        },
+        "style": {
+          "expected": "athleisure",
+          "predicted": "athleisure",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "polyester",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "activewear",
+          "predicted": "activewear",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_046.jpeg",
+      "prediction": {
+        "garment_type": "coat",
+        "style": "minimalist",
+        "material": "wool",
+        "occasion": "casual everyday",
+        "description": "The image features a woman wearing a sleek, dark coat suitable for cold weather. The coat has a minimalist design with a high collar and clean lines, emphasizing a structured silhouette. Snow is falli"
+      },
+      "ground_truth": {
+        "filename": "eval_046.jpeg",
+        "garment_type": "coat",
+        "style": "classic",
+        "material": "wool",
+        "occasion": "office",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "coat",
+          "predicted": "coat",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "classic",
+          "predicted": "minimalist",
+          "match": "mismatch"
+        },
+        "material": {
+          "expected": "wool",
+          "predicted": "wool",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "office",
+          "predicted": "casual everyday",
+          "match": "mismatch"
+        }
+      }
+    },
+    {
+      "filename": "eval_047.jpeg",
+      "prediction": {
+        "garment_type": "coat",
+        "style": "casual",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "description": "The image shows a person wearing a long, tan puffer coat, perfect for cold weather conditions. The coat features a quilted design, providing both warmth and style, and is accessorized with a grey knit"
+      },
+      "ground_truth": {
+        "filename": "eval_047.jpeg",
+        "garment_type": "coat",
+        "style": "casual",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "coat",
+          "predicted": "coat",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "casual",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "polyester",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_048.jpeg",
+      "prediction": {
+        "garment_type": "coat",
+        "style": "casual",
+        "material": "faux shearling",
+        "occasion": "casual everyday",
+        "description": "The image depicts a woman wearing a plush, oversized coat that exudes warmth and comfort, perfect for cold weather. The coat is made from faux shearling, offering a soft, textured appearance that comp"
+      },
+      "ground_truth": {
+        "filename": "eval_048.jpeg",
+        "garment_type": "coat",
+        "style": "casual",
+        "material": "wool",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "coat",
+          "predicted": "coat",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "casual",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "wool",
+          "predicted": "faux shearling",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_049.jpeg",
+      "prediction": {
+        "garment_type": "coat",
+        "style": "classic",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "description": "The garment is a long, quilted winter coat with a luxurious faux fur-trimmed hood, designed for warmth and style. The coat has a sleek, solid black exterior with a glossy finish, indicative of a water"
+      },
+      "ground_truth": {
+        "filename": "eval_049.jpeg",
+        "garment_type": "coat",
+        "style": "classic",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "coat",
+          "predicted": "coat",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "classic",
+          "predicted": "classic",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "polyester",
+          "predicted": "polyester",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_050.jpeg",
+      "prediction": {
+        "garment_type": "coat",
+        "style": "casual",
+        "material": "polyester",
+        "occasion": "casual everyday",
+        "description": "The garment featured in the image is a long, black puffer coat with a hood. The coat appears to be well-insulated, making it perfect for cold weather, with a straight silhouette that provides both sty"
+      },
+      "ground_truth": {
+        "filename": "eval_050.jpeg",
+        "garment_type": "coat",
+        "style": "casual",
+        "material": "quilted synthetic",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "coat",
+          "predicted": "coat",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "casual",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "quilted synthetic",
+          "predicted": "polyester",
+          "match": "mismatch"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_051.jpeg",
+      "prediction": {
+        "garment_type": "shirt",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "description": "The image showcases a casual, summer-appropriate ensemble featuring a short-sleeve, button-up shirt with a prominent tropical or botanical print. The shirt appears to be made of a lightweight material"
+      },
+      "ground_truth": {
+        "filename": "eval_051.jpeg",
+        "garment_type": "shirt",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "shirt",
+          "predicted": "shirt",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "casual",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_052.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "romantic",
+        "material": "cotton",
+        "occasion": "brunch",
+        "description": "The garment features a delicate off-the-shoulder dress with a smocked bodice, adorned with ruffled floral fabric which adds a romantic and vintage aesthetic. The fabric seems lightweight, possibly cot"
+      },
+      "ground_truth": {
+        "filename": "eval_052.jpeg",
+        "garment_type": "blouse",
+        "style": "romantic",
+        "material": "cotton",
+        "occasion": "brunch",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "blouse",
+          "predicted": "dress",
+          "match": "mismatch"
+        },
+        "style": {
+          "expected": "romantic",
+          "predicted": "romantic",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "brunch",
+          "predicted": "brunch",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_053.jpeg",
+      "prediction": {
+        "garment_type": "shirt",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "description": "The image features a person wearing a vertically striped short-sleeve shirt. The shirt has a relaxed, casual fit with a soft fabric texture, typical of lightweight cotton or a cotton blend. The sungla"
+      },
+      "ground_truth": {
+        "filename": "eval_053.jpeg",
+        "garment_type": "shirt",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "shirt",
+          "predicted": "shirt",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "casual",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_054.jpeg",
+      "prediction": {
+        "garment_type": "shorts",
+        "style": "streetwear",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "description": "The outfit features a casual ensemble consisting of a light, easy-wearing set of shorts and a short-sleeve shirt, layered over a basic tank top. The fabric appears to be soft, likely cotton, lending c"
+      },
+      "ground_truth": {
+        "filename": "eval_054.jpeg",
+        "garment_type": "shorts",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "shorts",
+          "predicted": "shorts",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "streetwear",
+          "match": "mismatch"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_055.jpeg",
+      "prediction": {
+        "garment_type": "dress",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "beach",
+        "description": "The image features a woman wearing a sleeveless dress with a bold, wavy geometric pattern in yellow and white. The dress has a simple, fitted silhouette, emphasizing a casual summer look. The ensemble"
+      },
+      "ground_truth": {
+        "filename": "eval_055.jpeg",
+        "garment_type": "sundress",
+        "style": "casual",
+        "material": "cotton",
+        "occasion": "beach",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "sundress",
+          "predicted": "dress",
+          "match": "fuzzy"
+        },
+        "style": {
+          "expected": "casual",
+          "predicted": "casual",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "cotton",
+          "predicted": "cotton",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "beach",
+          "predicted": "beach",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_056.jpeg",
+      "prediction": {
+        "garment_type": "jacket",
+        "style": "avant-garde",
+        "material": "leather",
+        "occasion": "evening",
+        "description": "The outfit features an all-black ensemble composed of a form-fitting leather jacket and matching trousers, accented by a large handbag and platform shoes. The ensemble exudes an edgy, avant-garde aest"
+      },
+      "ground_truth": {
+        "filename": "eval_056.jpeg",
+        "garment_type": "jacket",
+        "style": "avant-garde",
+        "material": "leather",
+        "occasion": "evening",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket",
+          "predicted": "jacket",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "avant-garde",
+          "predicted": "avant-garde",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "leather",
+          "predicted": "leather",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "evening",
+          "predicted": "evening",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_057.jpeg",
+      "prediction": {
+        "garment_type": "trousers",
+        "style": "avant-garde",
+        "material": "leather",
+        "occasion": "fashion forward",
+        "description": "The image showcases a pair of high-fashion brown leather trousers featuring intricate lace-up detailing along the leg seams. The trousers incorporate a robust, textured leather material, exuding a cla"
+      },
+      "ground_truth": {
+        "filename": "eval_057.jpeg",
+        "garment_type": "trousers",
+        "style": "avant-garde",
+        "material": "leather",
+        "occasion": "festival",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "trousers",
+          "predicted": "trousers",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "avant-garde",
+          "predicted": "avant-garde",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "leather",
+          "predicted": "leather",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "festival",
+          "predicted": "fashion forward",
+          "match": "mismatch"
+        }
+      }
+    },
+    {
+      "filename": "eval_058.jpeg",
+      "prediction": {
+        "garment_type": "corset",
+        "style": "avant-garde",
+        "material": "leather",
+        "occasion": "festival",
+        "description": "The image shows a striking, futuristic ensemble made from dark brown leather. The outfit features a structured leather corset with intricate lacing down the sides, complemented by matching arm guards "
+      },
+      "ground_truth": {
+        "filename": "eval_058.jpeg",
+        "garment_type": "vest",
+        "style": "avant-garde",
+        "material": "leather",
+        "occasion": "festival",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "vest",
+          "predicted": "corset",
+          "match": "mismatch"
+        },
+        "style": {
+          "expected": "avant-garde",
+          "predicted": "avant-garde",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "leather",
+          "predicted": "leather",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "festival",
+          "predicted": "festival",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_059.jpeg",
+      "prediction": {
+        "garment_type": "jacket and shorts",
+        "style": "streetwear",
+        "material": "leather",
+        "occasion": "casual everyday",
+        "description": "The outfit features a black leather ensemble comprising a jacket and high-waisted shorts, paired with long black boots and a black turtleneck. The glossy texture of the leather gives it a sleek and mo"
+      },
+      "ground_truth": {
+        "filename": "eval_059.jpeg",
+        "garment_type": "jacket and shorts",
+        "style": "fashion forward",
+        "material": "leather",
+        "occasion": "casual everyday",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket and shorts",
+          "predicted": "jacket and shorts",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "fashion forward",
+          "predicted": "streetwear",
+          "match": "mismatch"
+        },
+        "material": {
+          "expected": "leather",
+          "predicted": "leather",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "casual everyday",
+          "predicted": "casual everyday",
+          "match": "exact"
+        }
+      }
+    },
+    {
+      "filename": "eval_060.jpeg",
+      "prediction": {
+        "garment_type": "jacket",
+        "style": "avant-garde",
+        "material": "leather",
+        "occasion": "festival",
+        "description": "The ensemble features a striking all-black outfit composed of a cropped leather jacket and high-waisted wide-leg leather trousers. The styling incorporates seamless matching with platform boots and gl"
+      },
+      "ground_truth": {
+        "filename": "eval_060.jpeg",
+        "garment_type": "jacket",
+        "style": "avant-garde",
+        "material": "leather",
+        "occasion": "festival",
+        "location_context": "Unknown"
+      },
+      "comparison": {
+        "garment_type": {
+          "expected": "jacket",
+          "predicted": "jacket",
+          "match": "exact"
+        },
+        "style": {
+          "expected": "avant-garde",
+          "predicted": "avant-garde",
+          "match": "exact"
+        },
+        "material": {
+          "expected": "leather",
+          "predicted": "leather",
+          "match": "exact"
+        },
+        "occasion": {
+          "expected": "festival",
+          "predicted": "festival",
+          "match": "exact"
+        }
+      }
+    }
+  ],
+  "error_details": []
+}
