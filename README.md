@@ -31,12 +31,11 @@ A lightweight AI-powered web application that helps fashion designers organize, 
 
 ```bash
 # Clone and install
-git clone <repo-url>
-cd fashiontooltesting
+git clone https://github.com/Shuchintha/fasiontool.git
+cd fashiontool
 npm install
 
 # Configure environment
-cp app/server/.env.example app/server/.env
 # add .env in server and root to add your PORT, OPENAI_API_KEY and PEXELS_API_KEY
 PEXELS_API_KEY=your_api_key_here
 OPENAI_API_KEY=your_api_key_here
